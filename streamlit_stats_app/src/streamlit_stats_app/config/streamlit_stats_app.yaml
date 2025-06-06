@@ -1,0 +1,24 @@
+example1_scatterplotter: >
+  """Scatter Plotter description
+    Objective:
+
+    The objective of the scatter plotter streamlit app is to create a streamlit app in python. The app interface will have an uploader button that can be used to upload any csv file. Using the csv file,
+    identify the numerical columns and non-numerical columns in it. Finally, create selection buttons to select any two of the numerical columns,
+    and create a beautiful puublication-quality scatter plot of the two. Additionally create a hover functionality such that hovering over any point
+    on the scatter plot reveals details about the non-numerical quantities associated with that point.
+
+    Data Uploader Conditions:
+      Create a file uploader button to allow users to upload a csv file that contains a mix of numerical and non-numerical columns.
+
+    Data Reader Conditions:
+      Assert that a valid csv file has been uploaded, with atleast two numerical columns. If there are no headers supplied in the csv file, name the numerical columns as 
+      Qty1, Qty2, etc. and the non-numerical columns as Str1, Str2, etc. Use the pandas library to create a dataframe of the quantity, and display the dataframe on the streamlit
+      app interface.
+
+    Scatter Plot Conditions:
+      Once the csv file has been read into a dataframe, create two dropdown selection buttons named as "Select Qty 1" and "Select Qty 2". These dropdowns should allow the user to 
+      select any two of the numerical columns of the dataframe. By default, select the first two numerical columns in the dataframe. Once selection is updated, create a scatter plot
+      of the two selected quantities. Use plotly library for the scatter plot to create a beautiful publication quality scatter plot. Use a pleasing colour for the points, decently sized markers 
+      for the points, and labelled axes for the plot. Give a title to the plot based on the quantitiesused for plotting. Create a hover functionality for each point such that hovering over a point
+      reveals its numerical values as well as any non-numerical value in a nice little box.
+  """

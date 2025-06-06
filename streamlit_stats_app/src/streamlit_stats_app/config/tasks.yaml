@@ -1,0 +1,25 @@
+code_task:
+  description: >
+    You will create an interactive Streamlit app for data analysis using python, following the instructions:
+
+    Instructions
+    -------------
+    {streamlit_stats_app}
+  expected_output: >
+    Your final output must be the full python code, only the python code and nothing but the python code.
+  agent: researcher
+
+review_and_evaluate_task:
+  description: >
+    You will create an interactive Streamlit app for data analysis using python, following the instructions:
+
+    Instructions
+    -------------
+    {streamlit_stats_app}
+
+    Using the code you got, check for missing imports,
+    variable declarations, mismatched brackets, syntax errors, security vulnerabilities
+    and logic errors, and fix them to make code work perfectly and as intended.
+  expected_output: >
+     Your final output must be the full python code, only the python code and nothing but the python code.
+  agent: qa_engineer
