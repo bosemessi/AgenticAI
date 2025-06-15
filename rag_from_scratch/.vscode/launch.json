@@ -14,6 +14,7 @@
             "console": "integratedTerminal",
             "args": [
                 "--txt_file_path", "data/cat-facts.txt",
+                "--user_query", "How do cats show affection ?"
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
