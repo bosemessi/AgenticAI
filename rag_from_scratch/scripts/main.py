@@ -7,7 +7,7 @@ api_key = os.getenv('NEBIUS_API_KEY')
 
 from argparse import ArgumentParser
 
-from scripts import simple_RAG
+from scripts import simple_RAG, RAG_with_semantic_chunking
 
 def arg_parser():
     parser = ArgumentParser(description="Run a simple RAG pipeline with OpenAI.")
@@ -37,6 +37,17 @@ def main():
         ## Run the RAG pipeline
         ai_generated_answer = rag.pipeline()
         logger.info(f"AI Generated Answer: {ai_generated_answer}")
+    elif args.RAG_version == "RAG with semantic chunking":
+        logger.info("Running RAG with semantic chunking version of RAG.")
+        ## Initialize the simpleRAG class with semantic chunking
+        rag = RAG_with_semantic_chunking.ragWithSemanticChunking(
+            txt_file_path=args.txt_file_path,
+            user_query=args.user_query,
+            client=openai_client
+        )
+        ## Run the RAG pipeline
+        ai_generated_answer = rag.pipeline()
+        logger.info(f"AI Generated Answer: {ai_generated_answer}")  
     else:
         raise ValueError(f"Unsupported RAG version: {args.RAG_version}")
     
