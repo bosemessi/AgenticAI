@@ -5,16 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: 001_simple_RAG",
+            "name": "Python Debugger: main",
             "type": "debugpy",
             "request": "launch",
-            "program": "scripts/001_simple_RAG.py",
+            "program": "scripts/main.py",
             "cwd": "${workspaceFolder}",
             "envFile": "${workspaceFolder}/.env",
             "console": "integratedTerminal",
             "args": [
                 "--txt_file_path", "data/cat-facts.txt",
-                "--user_query", "How do cats show affection ?"
+                "--user_query", "How do cats show affection ?",
+                "--RAG_version", "simpleRAG"
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
