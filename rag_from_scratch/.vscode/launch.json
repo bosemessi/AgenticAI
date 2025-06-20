@@ -14,8 +14,9 @@
             "console": "integratedTerminal",
             "args": [
                 "--txt_file_path", "data/cat-facts.txt",
-                "--user_query", "Are cats related to tigers and lions ?",
-                "--RAG_version", "RAG with semantic chunking"
+                "--pdf_file_path", "data/NeuralOperator.pdf",
+                "--user_query", "Give us 5 cute facts about cats",
+                "--RAG_version", "context headers RAG"
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"

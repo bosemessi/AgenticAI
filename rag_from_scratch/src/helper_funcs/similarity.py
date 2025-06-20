@@ -45,4 +45,28 @@ def semantic_search(query: str, chunks: List[str], k: int, model: str, client: O
     
     return top_k_indices
 
-
+def context_enriched_search(query: str, chunks: List[str], k: int, model: str, client: OpenAI, n_context: int) -> List[str]:
+    """
+    Perform context-enriched search to find the top k chunks most similar to the query,
+    enriched with additional context from the n_context most similar chunks.
+    
+    Args:
+        query (str): User Query string.
+        chunks (list of str): List of chunk strings from the knowledge text.
+        k (int): Number of top results to return.
+        model (str): Model to use for creating embeddings.
+        client (OpenAI): OpenAI client to use for API requests.
+        n_context (int): Number of context chunks to include in the enriched search.
+        
+    Returns:
+        list: List of enriched context strings for the query.
+    """
+    top_index = semantic_search(query, chunks, 1, model, client)
+    enriched_contexts = []
+    
+    start = max(0, top_index[0] - n_context)
+    end = min(len(chunks), top_index[0] + n_context + 1)
+    for idx in range(start, end):
+        enriched_contexts.append(chunks[idx])
+    
+    return enriched_contexts

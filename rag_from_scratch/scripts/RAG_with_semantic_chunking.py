@@ -39,7 +39,7 @@ class ragWithSemanticChunking:
         logger.info(f"Sentence similarities calculated: {sentence_similarities}")
 
         ## Compute breakpoints based on the similarity scores
-        breakpoints = compute_breakpoints(similarities=sentence_similarities, method="percentile", threshold=70)
+        breakpoints = compute_breakpoints(similarities=sentence_similarities, method="IQR", threshold=70)
         logger.info(f"Breakpoints computed: {breakpoints}")
         
         ## Create chunks based on the breakpoints
